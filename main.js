@@ -46,10 +46,6 @@ var swiper = new Swiper(".mySwiper", {
     });
 });
 
-// function toggleMenu() {
-//     var menu = document.querySelector('.menu');
-//     menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
-// }
 function toggleMenu() {
     var menuToggle = document.querySelector('.menu-toggle');
     var menu = document.querySelector('.menu');
@@ -57,4 +53,15 @@ function toggleMenu() {
     menuToggle.classList.toggle('active'); 
     menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
 }
+
+document.addEventListener('scroll', function () {
+    var navbar = document.getElementById('header');
+    var scrollPosition = window.scrollY;
+
+    if (scrollPosition > 100) { 
+        navbar.style.opacity = '0.9';
+    } else {
+        navbar.style.opacity = '1';
+    }
+});
 
